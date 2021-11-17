@@ -1,0 +1,15 @@
+{
+  "name": "smoll-physics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "kdraw.js",
+  "scripts": {
+    "build": "tlpack",
+    "dev": "tlpack watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tlpack": "^1.0.6"
+  }
+}
