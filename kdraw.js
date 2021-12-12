@@ -32,12 +32,15 @@ class KDRAW {
     frameCount++
 
     if(typeof draw === "function") {
-        draw()
+      requestAnimationFrame(draw)
     }
 
     // reset every frame
     pmouseX = mouseX
     pmouseY = mouseY
+
+    width = this.canvas.width
+    height = this.canvas.height
 
     setTimeout(()=>{this.draw()},1000/this.frameRate)
   }
@@ -375,9 +378,9 @@ function resetMatrix(){
 
 // Environment
 
-const width = kdraw.canvas.width
+var width = kdraw.canvas.width
 
-const height = kdraw.canvas.height
+var height = kdraw.canvas.height
 
 function frameRate(n){
   kdraw.frameRate=n;

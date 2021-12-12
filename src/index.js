@@ -13,6 +13,11 @@ noStroke()
 //   }
 // }
 
+balls.push(new Ball(color(random(100,255), random(100,255), random(100,255)), 100, 50, 40, false))
+setTimeout(()=>{
+  balls.push(new Ball(color(random(100,255), random(100,255), random(100,255)), 130, 50, 40, false))
+}, 500)
+
 let ballGroups = []
 
 function createBallGroups(balls) {
@@ -42,7 +47,10 @@ function getBallGroup(x, y) {
 }
 
 function draw() {
-  background(0, 0, 0)
+  background(250, 250, 255)
+
+  kdraw.canvas.width = window.innerWidth
+  kdraw.canvas.height = window.innerHeight
 
   if(groupSize!==1) {
     createBallGroups(balls)
@@ -78,9 +86,8 @@ function draw() {
   balls.forEach((ball)=> {
     ball.draw()
   })
-
 }
 
 function mouseReleased() {
-  balls.push(new Ball(color(random(100,255), random(100,255), random(100,255)), mouseX, mouseY, 60, false))
+  balls.push(new Ball(color(random(100,255), random(100,255), random(100,255)), mouseX, mouseY, 40, false))
 }

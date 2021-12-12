@@ -1,5 +1,5 @@
 const g = 250
-const b = 1
+const b = 0.3
 const mu = 1
 const c = 1000000
 
@@ -30,7 +30,7 @@ export class Ball {
       y: (g * this.mass) - (b * this.velocity.y)
     }
 
-    if(this.y === 400 - this.r /2 && this.velocity.x !== 0) {
+    if(this.y === height - this.r /2 && this.velocity.x !== 0) {
       force.x += -(this.velocity.x / Math.abs(this.velocity.x)) * this.mass * g * mu
     }
 
@@ -138,6 +138,7 @@ export class Ball {
   }
 
   draw() {
+    noStroke()
     fill(100, 0, 0)
     ellipse(this.past.x, this.past.y, this.r, this.r)
 
